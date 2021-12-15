@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdzy.dao.UserSongSheetDao">
+	<select id="getUserSongSheetList" parameterType="UserSongSheet" resultType="UserSongSheet">
+		select * from user_SongSheet where user_id=#{user_id}
+	</select>
+	
+	<insert id="addSongSheet" parameterType="UserSongSheet">
+		INSERT INTO user_SongSheet VALUE(0,#{user_id},#{songSheet_name})
+	</insert>
+	
+	<resultMap type="MusicSongSheet" id="MusicSongSheetMap">
+		<id property="songSheet_id" column="songSheet_id"/>
+		<collection property="musics" ofType="MusicInfo">
+			<id property="music_id" column="music_id"/>
+			<result property="music_name" column="music_name"/>
+			<result property="music_singer" column="music_singer"/>
+			<result property="music_album" column="music_album"/>
+			<result property="music_file_url" column="music_file_url"/>
+		</collection>
+	</resultMap>
+	
+	<select id="getMusicSongSheet" parameterType="MusicSongSheet" resultMap="MusicSongSheetMap">
+		SELECT s.songSheet_id, m.`music_id`,m.`music_name`,m.`music_singer`,m.`music_album`,m.`music_file_url` 
+		FROM music_SongSheet s,musicInfo m 
+		WHERE s.music_id=m.music_id AND s.songSheet_id=#{songSheet_id}
+        <if test="music_name != null and music_name !='' " > 
+        	   and music_name like "%"#{music_name}"%"
+        </if>
+        <if test="music_singer != null and music_singer !='' " >
+       		   and music_singer like "%"#{music_singer}"%"
+        </if>
+	</select>
+	
+	<insert id="addMusicSongSheet" parameterType="MusicSongSheet">
+		INSERT INTO music_SongSheet VALUE(#{songSheet_id},#{music_id})
+	</insert>
+	
+	<delete id="delMusicSongSheet" parameterType="MusicSongSheet">
+		delete from music_SongSheet where songSheet_id=#{songSheet_id} and music_id=#{music_id}
+	</delete>
+</mapper>
