@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdzy.dao.UserLikeMusicDao">
+	<resultMap type="UserLikeMusic" id="UserLikeMusicMap">
+		<id property="user_id" column="user_id"/>
+		<collection property="likeMusics" ofType="MusicInfo">
+			<id property="music_id" column="music_id"/>
+			<result property="music_name" column="music_name"/>
+			<result property="music_singer" column="music_singer"/>
+			<result property="music_album" column="music_album"/>
+			<result property="music_file_url" column="music_file_url"/>
+		</collection>
+	</resultMap>
+	
+	<select id="selectUserLikeMusic" parameterType="UserLikeMusic" resultMap="UserLikeMusicMap">
+		SELECT l.`user_id`,m.`music_id`,m.`music_name`,m.`music_singer`,m.`music_album`,m.`music_file_url` 
+		FROM user_likeMusic l,musicInfo m 
+		WHERE l.music_id=m.music_id AND l.user_id=#{user_id}
+		<if test="music_id != null and music_id !=0 " > 
+	           and music_id =#{music_id}
+        </if>
+        <if test="music_name != null and music_name !='' " > 
+        	   and music_name like "%"#{music_name}"%"
+        </if>
+        <if test="music_singer != null and music_singer !='' " >
+       		   and music_singer like "%"#{music_singer}"%"
+        </if>
+	</select>
+	
+	<insert id="insertUserLikeMusic" parameterType="UserLikeMusic">
+		INSERT user_likeMusic VALUES(#{user_id},#{music_id})
+	</insert>
+	
+	<delete id="deleteUserLikeMusic" parameterType="UserLikeMusic">
+		delete from user_likeMusic where user_id=#{user_id} and music_id=#{music_id}
+	</delete>
+</mapper>
