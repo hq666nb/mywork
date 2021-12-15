@@ -1,0 +1,94 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+#musicPlayView{
+	position: fixed;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+	overflow:hidden;
+	animation-fill-mode : forwards;
+	-webkit-animation-name: animatebottom;
+	-webkit-animation-duration:0.3s;
+}
+
+@-webkit-keyframes animatebottom {
+	0%   {
+		transform: translateY(100%);opacity: 1;
+		overflow:hidden;
+	}
+    100% {
+    	transform: translateY(0px);opacity: 1
+    	overflow:none;
+    }
+}
+
+#backPictrue {
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position: center;
+	text-align: center;
+	filter: blur(30px);
+	transform: scale(1.2);
+	position: fixed;
+	left: 0%;
+	top: 0%;
+	width: 100%;
+	height: 100%;
+}
+
+#back{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+}
+
+#playViewImg{
+	height: 400px;
+	position: fixed;
+	left: 15%;
+	top: calc((100% - 476px)/2);
+	border-radius:8px;
+}
+
+#lrcdiv{
+	width: 40%;
+	height:70%;
+	position: fixed;
+	right: 10%;
+	top: calc((30% - 76px)/2);
+	overflow:hidden;
+}
+
+#lrcHead{
+	width:100%;
+	height: 110px;
+	text-align: center;
+}
+
+#lrc{
+	width:calc(100% + 17px);
+	height: calc(100% - 110px);
+	overflow:scroll;
+	overflow-x: hidden;
+}
+
+#lrc p{
+	text-align: center;
+	line-height: 36px;
+	font-size:16px;
+	color:#fff;
+}
+
+#lrc p span{
+	float: left;
+	color:#aaa;
+	font-size: 12px;
+	display: none;
+}

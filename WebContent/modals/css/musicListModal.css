@@ -1,0 +1,113 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#musicListModal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#musicListModal .modalContext {
+	border-radius:12px;
+	float:right;
+	background-color: #ffffff;
+	width: 290px;
+	height:calc(100% - 15px);
+	margin-top:5px;
+	border: 1px solid #fff;
+	box-shadow: -1px 0px 10px 1px rgba(0, 0, 0, 0.2);
+	-webkit-animation-name: animateright;
+	-webkit-animation-duration: 0.3s;
+}
+
+@-webkit-keyframes animateright {
+	0% {
+		margin-right: -290px;
+	}
+	100% {
+		margin-right: 0px;
+	}
+}
+
+#musicListModal .modalHead{
+	height: 120px;
+}
+
+#musicListModal .modalHead h3{
+	text-align: left;
+	line-height: 60px;
+	margin-left: 25px;
+	font-size:21px;
+	font-weight: 500;
+	color: #222;
+	font-style: normal;
+	padding-top: 10px;
+}
+
+#musicListModal .modalHead p{
+	float: right;
+	margin-right: 15px;
+	font-size: 14px;
+	color: #555;
+}
+
+#musicListModal .modalHead p:HOVER{
+	color: red;
+}
+
+#musicListModal .modalBody{
+	width:calc(100% + 15px);
+	height: 100%;
+	overflow:scroll;
+	overflow-x: hidden;
+}
+
+#musicListModal .modalBody .itme{
+	height: 68px;
+}
+
+#musicListModal .modalBody .itme .itmeLe{
+	float:left;
+	margin:11px 11px 0px 25px;
+}
+
+#musicListModal .modalBody .itme .itmeLe p{
+	line-height:21px;
+    overflow: hidden;
+}
+
+#musicListModal .modalBody .itme .itmeLe #singer{
+    color:#888;
+}
+
+#musicListModal .modalBody .itme .itmere{
+	float: right;
+	margin-right: 5px;
+	font-size: 16px;
+	display: none;
+}
+
+#musicListModal .modalBody .itme .itmere a{
+	line-height:66px;
+	padding:2px 12px;
+}
+
+#musicListModal .modalFoot{
+	border-top:solid 0.8px #ddd;
+	height: 61px;
+}
+
+#musicListModal .modalFoot p{
+	line-height: 60px;
+	float:right;
+	margin-right: 30px;
+	font-size: 14px;
+	color: #555;
+}
+
+#musicListModal .modalFoot p:HOVER{
+	color: #1ecf9f;
+}

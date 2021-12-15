@@ -1,0 +1,125 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#loginModal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#loginModal .modalContext {
+	position: relative;
+	top:calc((100% - 360px)/3);
+	background-color: #ffffff;
+	margin: auto;
+	width: 550px;
+	height:360px;
+	border-radius:15px;
+	border: 1px solid #fff;
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+	-webkit-animation-name: animatetop;
+	-webkit-animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatetop {
+	from {
+		top: -360px;
+		opacity: 0
+	}
+	to {
+		top: calc((100% - 360px)/3);
+		opacity: 1
+	}
+}
+
+#loginModal .modalHead h3 {
+	font-size:23px;
+	margin-top: 55px;
+	text-align: center;
+	font-weight: 400;
+	color: #444;
+	font-style: normal;
+	margin-bottom: 10px;
+}
+
+#loginModal .col {
+	margin-top: 20px;
+	float: right;
+	color: #aaa;
+	margin-right: 20px;
+	font-size: 23px;
+}
+
+#loginModal .col:hover{
+	color: #1ecf9f;
+}
+
+#loginModal .modalBody{
+	text-align:center;
+}
+
+#loginModal .modalBody input{
+	outline: none;
+	border-radius:20px;
+	width:270px;
+	height: 36px;
+	margin-top: 20px;
+	text-indent:1em;
+	border: #bbb solid 0.8px;
+	color: #000;
+	font-size: 13px;
+}
+
+#loginModal .modalBody input::placeholder {
+  color: #bbb;
+}
+
+#loginModal .modalBody input:HOVER{
+	border: #1ecf9f solid 0.8px;
+}
+
+#loginModal .modalBody button {
+	outline: none;
+	border-radius:20px;
+	width:270px;
+	height: 36px;
+	margin-top: 20px;
+	background: #1ecf9f;
+	border: #1ecf9f solid 1px;
+	color: #f5f5f5;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+#loginModal .modalBody button:HOVER {
+	background: #1cc194;
+}
+
+#loginModal .modalFoot{
+	text-align:center;
+	margin-bottom: 50px;
+}
+
+#loginModal .modalFoot a{
+	font-size:14px;
+	font-weight: 400;
+	color: #555;
+}
+
+#loginModal .modalFoot a:HOVER{
+	text-decoration: underline;
+	color: red;
+}
+
+#loginModal .modalBody span {
+	position: absolute;
+	margin-top: 20px;
+	line-height: 36px;
+	margin-left: 5px;
+	font-size:14px;
+	font-weight: 200;
+	color: red;
+}

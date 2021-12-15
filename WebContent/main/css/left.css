@@ -1,0 +1,74 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	height:100vh;
+	background: #f5f5f5;
+}
+#info_left{
+	float: left;
+	width: 100%;
+	height: 100%;
+	background-color:#eeeeee;
+}
+#info_left #imgdiv{
+	display:block;
+	width: 60px;
+	height: 60px;
+	margin: auto;
+	margin-top: 10px;
+	border-radius:30px;
+	overflow:hidden;
+}
+#info_left #imgdiv img{
+	width: 100%;
+	height: 100%;
+}
+#info_left h5{
+	line-height:20px;
+	margin-top: 10px;
+	text-align: center;
+}
+#info_left p{
+	text-align: center;
+	margin: 15px;
+}
+#info_left p a{
+	text-decoration :none;
+	color:red;
+	font-size: 13px;
+}
+#info_left .uldiv{
+	text-indent:2em;
+	margin-left: 5%;
+}
+#info_left a.a{
+	line-height: 35px;
+	font-size: 13px;
+	color:#1ecf9f;
+	font-weight: bold;
+	border-bottom:solid #1ecf9f 1.3px;
+}
+#info_left ul li,#addsongSheet{
+	margin:5px 0px;
+	list-style-type:none;
+	line-height: 30px;
+	padding: 3px 0px;
+	width:160px;
+	border-radius:20px;
+}
+#info_left ul li a,#addsongSheet{
+	color:#2e2e2e;
+	text-decoration :none;
+	font-weight: 100;
+}
+#addsongSheet:hover{
+	color: #1ecf9f;
+}
+#info_left ul li:hover >a{
+	color:#ffffff !important;
+}
+#info_left ul li:hover{
+	background-color: #1ecf9f !important;
+}
